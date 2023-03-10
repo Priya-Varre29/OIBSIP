@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("temp.jpg");
+            background-size: cover;
+           
+        }
+        .box{
+            width: 500px;
+            background:transparent;
+            background-position: center;
+            padding: 70px;
+            transform: translate(65%,40%);
+            box-shadow: 10px 15px 25px rgba(0, 0, 0, 1);
+            box-sizing:content-box;
+            border-radius: 700px;
+            color:rgb(246, 237, 237);
+           
+        }
+        .inputbox input{
+            height: 20px;
+            font-weight: bold;
+          
+            
+        }
+        .inputbox select{
+            height: 25px;
+            width:100px;
+        }
+        button{
+            width: fit-content;
+            border-radius: 10px;
+            background-color: rgb(233, 238, 236);
+        }
+        p{
+
+            width: fit-content;
+            background-color:white;
+            transform: translate(27%);
+            border-radius: 700px;
+            /* border-color: rgb(6, 6, 6); */
+            color:black;
+            
+        }
+        p{
+            display: flex;
+        }
+        h2{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <center><h1><em>Temparature converter</em></h1></center>
+       <center> <div class="inputbox">
+            <input type="number" id="degree"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="temp">
+                <option value="cel">Celcius</option>
+                <option value="far">Farenheit</option>
+            </select>
+            <br />
+            <br />
+            <div class="submit">
+                <center>
+                    <button type="button" onclick="k()">Convert</button>
+                </center>
+            </div>
+            <p class="temps"><em><h2>Temparature value:</h2></em></p>
+            <h1><p id="display"></p></h1>
+        </div>
+    </div></center>
+    <script>
+        function k(){
+            var l=document.getElementById('degree').value
+            var x=document.getElementById("temp").value;
+            var h=0;
+            if(x=="cel"){
+                h=l*(9/5)+32;
+            }
+            else{
+                h=(l-32)+(5/9);
+            }
+            document.getElementById("display").innerHTML="your output"+" "+h;
+        }
+    </script>
+</body>
+</html>
